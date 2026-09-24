@@ -1,0 +1,419 @@
+/* ==========================================================================
+   FERNWICK — Plant Shop
+   tokens.css · design tokens, reset, base type, buttons, forms
+   Palette idea: green is the INK, not the accent. Ochre does the pointing.
+   ========================================================================== */
+
+:root {
+  /* ---- Glasshouse ground (cool green-grey — not cream, not neutral stone) */
+  --glass:     #edf1ea;
+  --glass-2:   #e4ebdf;
+  --glass-3:   #d8e2d2;
+  --paper:     #fbfcfa;   /* cards, product tiles */
+
+  /* ---- Forest ink ramp -------------------------------------------------- */
+  --forest:    #14251a;
+  --forest-2:  #33463a;
+  --forest-3:  #5e7064;
+  --forest-4:  #8a9a8e;
+
+  --hairline:      #cfdac9;
+  --hairline-soft: #dfe7da;
+
+  /* ---- Accent: brass ochre ---------------------------------------------- */
+  --ochre:      #c9861f;
+  --ochre-deep: #a66c12;
+  --ochre-wash: rgba(201, 134, 31, 0.12);
+  --on-ochre:   #ffffff;
+
+  /* ---- Functional (shop states, never decoration) ----------------------- */
+  --sale:      #b4462b;
+  --sale-wash: rgba(180, 70, 43, 0.10);
+  --stock:      #3d6b4a;
+  --stock-wash: rgba(61, 107, 74, 0.12);
+  --low:      #a8720d;
+  --low-wash: rgba(168, 114, 13, 0.12);
+
+  /* ---- Type ------------------------------------------------------------- */
+  --font-display: "Epilogue", ui-sans-serif, system-ui, sans-serif;
+  --font-body:    "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "Sometype Mono", ui-monospace, "SF Mono", monospace;
+
+  --text-xs:   0.75rem;
+  --text-sm:   0.8438rem;
+  --text-base: 0.9375rem;
+  --text-md:   1.0625rem;
+  --text-lg:   1.3125rem;
+  --text-xl:   1.75rem;
+  --text-2xl:  clamp(1.75rem, 1.35rem + 1.5vw, 2.6rem);
+  /* Shop-first layout: no oversized marketing hero anywhere. */
+  --text-hero: clamp(2rem, 1.4rem + 2.4vw, 3.4rem);
+
+  /* ---- Space ------------------------------------------------------------ */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4.5rem;
+
+  --gutter: clamp(1rem, 0.4rem + 2.4vw, 3rem);
+  --maxw: 1400px;
+
+  /* ---- Shape ------------------------------------------------------------ */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 14px;
+  --r-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(20, 37, 26, 0.06);
+  --shadow-md: 0 10px 30px -12px rgba(20, 37, 26, 0.22);
+  --shadow-lg: 0 26px 60px -22px rgba(20, 37, 26, 0.30);
+
+  /* ---- Motion ----------------------------------------------------------- */
+  --dur-fast: 140ms;
+  --dur: 240ms;
+  --dur-slow: 620ms;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --z-drawer: 60;
+  --z-toast: 80;
+}
+
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+
+[hidden] { display: none !important; }
+
+html { -webkit-text-size-adjust: 100%; overflow-x: clip; }
+
+body {
+  background: var(--glass);
+  color: var(--forest);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+img, svg { display: block; max-width: 100%; }
+img { height: auto; }
+
+button, input, select, textarea { font: inherit; color: inherit; }
+button { background: none; border: 0; cursor: pointer; }
+
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; padding: 0; }
+table { border-collapse: collapse; width: 100%; }
+
+:focus-visible {
+  outline: 2px solid var(--ochre);
+  outline-offset: 3px;
+  border-radius: var(--r-sm);
+}
+
+::selection { background: var(--ochre); color: var(--on-ochre); }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.028em;
+  line-height: 1.18;
+  color: var(--forest);
+}
+
+h1 { font-size: var(--text-2xl); }
+h2 { font-size: var(--text-xl); }
+h3 { font-size: var(--text-md); }
+
+p { line-height: 1.65; }
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--forest-3);
+  line-height: 1.5;
+}
+
+/* Prices and any figure a shopper compares — tabular so columns line up. */
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.muted { color: var(--forest-3); }
+.soft  { color: var(--forest-2); }
+
+.lede {
+  font-size: var(--text-md);
+  line-height: 1.6;
+  color: var(--forest-2);
+  max-width: 58ch;
+}
+
+.read { max-width: 66ch; color: var(--forest-2); line-height: 1.75; }
+.read p + p { margin-top: 1.15em; }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==========================================================================
+   Layout helpers
+   ========================================================================== */
+
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section { padding-block: var(--s-7); }
+.section--tight { padding-block: var(--s-6); }
+
+.sechead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--s-5);
+}
+.sechead p { color: var(--forest-3); font-size: var(--text-sm); margin-top: 4px; }
+
+.rule { height: 1px; background: var(--hairline); border: 0; }
+
+.grid { display: grid; gap: var(--s-5); }
+.grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+@media (max-width: 1080px) { .grid--4 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 860px)  { .grid--3, .grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px)  { .grid--2, .grid--3, .grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  height: 44px;
+  padding: 0 var(--s-5);
+  border: 1px solid transparent;
+  border-radius: var(--r-pill);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  transition: background var(--dur-fast) var(--ease),
+              color var(--dur-fast) var(--ease),
+              border-color var(--dur-fast) var(--ease),
+              transform var(--dur-fast) var(--ease);
+}
+.btn:active { transform: translateY(1px); }
+.btn svg { width: 16px; height: 16px; flex: none; }
+
+.btn--primary { background: var(--forest); color: var(--paper); }
+.btn--primary:hover { background: var(--ochre); color: var(--on-ochre); }
+
+.btn--ochre { background: var(--ochre); color: var(--on-ochre); }
+.btn--ochre:hover { background: var(--ochre-deep); }
+
+.btn--ghost { border-color: var(--hairline); color: var(--forest-2); background: transparent; }
+.btn--ghost:hover { border-color: var(--forest); color: var(--forest); background: var(--paper); }
+
+.btn--quiet { color: var(--forest-3); padding: 0 var(--s-3); height: 38px; }
+.btn--quiet:hover { color: var(--forest); }
+
+.btn--sm { height: 36px; padding: 0 var(--s-4); font-size: var(--text-xs); }
+.btn--block { width: 100%; }
+
+.btn[disabled] { opacity: 0.45; pointer-events: none; }
+
+.btn--icon {
+  width: 40px; height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  color: var(--forest-2);
+  position: relative;
+}
+.btn--icon:hover { background: var(--glass-2); color: var(--forest); }
+.btn--icon svg { width: 19px; height: 19px; }
+
+/* Text link with a growing underline */
+.tlink {
+  position: relative;
+  font-weight: 600;
+  color: var(--forest);
+  padding-bottom: 2px;
+}
+.tlink::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%; height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s var(--ease);
+}
+.tlink:hover { color: var(--ochre); }
+.tlink:hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* ==========================================================================
+   Badges — colour carries stock/price state only
+   ========================================================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+  font-family: var(--font-mono);
+  font-size: 0.6563rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background: var(--glass-3);
+  color: var(--forest-2);
+}
+.badge--sale  { background: var(--sale-wash);  color: var(--sale); }
+.badge--stock { background: var(--stock-wash); color: var(--stock); }
+.badge--low   { background: var(--low-wash);   color: var(--low); }
+.badge--new   { background: var(--forest);     color: var(--paper); }
+.badge .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex: none; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+.field { display: grid; gap: var(--s-2); }
+.field > label { font-size: var(--text-sm); font-weight: 600; color: var(--forest-2); }
+.field .hint { font-size: var(--text-xs); color: var(--forest-3); }
+
+.input, .select, .textarea {
+  width: 100%;
+  height: 44px;
+  padding: 0 var(--s-4);
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-md);
+  font-size: var(--text-sm);
+  color: var(--forest);
+  transition: border-color var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
+}
+.textarea { height: auto; padding: var(--s-3) var(--s-4); min-height: 110px; resize: vertical; line-height: 1.6; }
+.input::placeholder, .textarea::placeholder { color: var(--forest-4); }
+
+.input:focus, .select:focus, .textarea:focus {
+  outline: none;
+  border-color: var(--ochre);
+  box-shadow: 0 0 0 3px var(--ochre-wash);
+}
+
+.select {
+  appearance: none;
+  cursor: pointer;
+  padding-right: var(--s-6);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%235e7064' stroke-width='1.6' stroke-linecap='round'><path d='M4 6.5 8 10.5 12 6.5'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right var(--s-3) center;
+  background-size: 16px;
+}
+
+.check {
+  appearance: none;
+  width: 17px; height: 17px;
+  flex: none;
+  border: 1.5px solid var(--forest-4);
+  border-radius: 4px;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  transition: background var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+}
+.check::after {
+  content: "";
+  width: 8px; height: 4px;
+  border-left: 2px solid var(--on-ochre);
+  border-bottom: 2px solid var(--on-ochre);
+  transform: rotate(-45deg) scale(0);
+  transition: transform var(--dur-fast) var(--ease);
+  margin-top: -2px;
+}
+.check:checked { background: var(--ochre); border-color: var(--ochre); }
+.check:checked::after { transform: rotate(-45deg) scale(1); }
+
+/* Quantity stepper — used in cart and on the product page */
+.qty {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-pill);
+  background: var(--paper);
+  overflow: hidden;
+}
+.qty button {
+  width: 38px; height: 42px;
+  display: grid;
+  place-content: center;
+  color: var(--forest-2);
+  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+.qty button:hover { background: var(--glass-2); color: var(--forest); }
+.qty input {
+  width: 44px;
+  height: 42px;
+  border: 0;
+  text-align: center;
+  background: transparent;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--text-sm);
+  -moz-appearance: textfield;
+}
+.qty input::-webkit-outer-spin-button,
+.qty input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.qty input:focus { outline: none; }
+
+/* ==========================================================================
+   Motion preference
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
