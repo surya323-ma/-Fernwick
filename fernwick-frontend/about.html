@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Our nursery — Fernwick</title>
+<meta name="description" content="The story behind the nursery — Fernwick free HTML ecommerce template." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&family=Sometype+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+
+<link rel="stylesheet" href="assets/css/tokens.css" />
+<link rel="stylesheet" href="assets/css/shop.css" />
+</head>
+<body>
+
+<div class="announce">
+  <p>Free delivery on orders over £40 — <a href="shop.html">shop the nursery</a></p>
+</div>
+
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <a class="brand" href="index.html" aria-label="Fernwick — home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 21V9" />
+        <path d="M12 13c0-3.3 2.7-6 6-6 0 3.3-2.7 6-6 6Z" />
+        <path d="M12 16c0-2.8-2.2-5-5-5 0 2.8 2.2 5 5 5Z" />
+      </svg>
+      <span class="brand__word">Fernwick</span>
+    </a>
+
+    <nav class="shopnav" aria-label="Main" data-open="false">
+      <a href="shop.html">Shop</a>
+      <a href="care.html">Care guides</a>
+      <a href="about.html" aria-current="page">Our nursery</a>
+      <a href="cart.html">Basket</a>
+      <a href="orders.html" data-nav-orders hidden>Orders</a>
+    </nav>
+
+    <div class="masthead__tools">
+      <label class="searchbox">
+        <span class="sr-only">Search plants</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input class="input" type="search" placeholder="Search plants…" />
+      </label>
+
+      <a class="btn btn--icon" href="login.html" id="accountLink" aria-label="Sign in">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>
+      </a>
+
+      <button class="btn btn--icon" type="button" data-action="open-drawer" aria-label="Open basket">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="cartbtn__count" data-cart-count hidden>0</span>
+      </button>
+
+      <button class="btn btn--icon burger" type="button" aria-expanded="false" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap section--tight">
+  <nav class="label" aria-label="Breadcrumb" style="margin-bottom:var(--s-4)">
+    <a href="index.html">Home</a> / <span>Our nursery</span>
+  </nav>
+
+  <div class="sechead">
+    <div>
+      <p class="label">Since 2014</p>
+      <h1>A nursery in the Lea Valley</h1>
+      <p class="lede">Two polytunnels, one glasshouse, and eleven people who would rather grow plants than import them.</p>
+    </div>
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1470058869958-2a77ade41c02?w=1600&q=75&auto=format&fit=crop"
+       alt="Palms and ferns filling the Fernwick glasshouse" width="1600" height="800"
+       style="width:100%;aspect-ratio:2/1;object-fit:cover;border-radius:var(--r-lg);margin-bottom:var(--s-7)"
+       fetchpriority="high" decoding="async" />
+
+  <div class="grid" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s-7);margin-bottom:var(--s-7)">
+    <div class="read">
+      <p>
+        Fernwick began in 2014 with one leaking polytunnel and a stubborn conviction that
+        the houseplant trade had gone wrong somewhere. Most plants sold in Britain are grown
+        in Holland, shipped hard, and sold within a fortnight by people who have never seen
+        them growing. They look magnificent for a month and then decline for reasons nobody
+        in the chain can explain.
+      </p>
+      <p>
+        We grow ours here, slowly, in less heat than is ideal. That makes them shorter and
+        stockier than the imported equivalent, and considerably tougher. A Fernwick monstera
+        will not be the biggest plant on the shelf. It will be the one still alive next year.
+      </p>
+      <p>
+        Everything is peat-free — we stopped in 2019, two years before we had to — and pots
+        are recycled and re-used. We are not carbon neutral and we are not going to claim it.
+      </p>
+    </div>
+
+    <div>
+      <div class="specs" style="border-top:1px solid var(--hairline)">
+        <div class="specs__row"><dt>Founded</dt><dd>2014, Lea Valley</dd></div>
+        <div class="specs__row"><dt>Growing under</dt><dd>Two polytunnels, one glasshouse</dd></div>
+        <div class="specs__row"><dt>People</dt><dd>Eleven, six of them growers</dd></div>
+        <div class="specs__row"><dt>Species in stock</dt><dd>Around 140 at any time</dd></div>
+        <div class="specs__row"><dt>Compost</dt><dd>Peat-free since 2019</dd></div>
+        <div class="specs__row"><dt>Open to visit</dt><dd>Saturdays, 9am–4pm</dd></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="band" data-reveal style="margin-bottom:var(--s-7)">
+    <div class="grid grid--3" style="gap:var(--s-6)">
+      <div>
+        <p class="label">01</p>
+        <h3 style="margin:var(--s-3) 0">Grown here, not imported</h3>
+        <p>Every plant on the site was raised at this nursery. If we ever have to buy one in, the listing says so.</p>
+      </div>
+      <div>
+        <p class="label">02</p>
+        <h3 style="margin:var(--s-3) 0">Honest difficulty ratings</h3>
+        <p>We would rather lose a sale than sell you a calathea for a north-facing hallway.</p>
+      </div>
+      <div>
+        <p class="label">03</p>
+        <h3 style="margin:var(--s-3) 0">Thirty-day guarantee</h3>
+        <p>If it fails in the first month we replace it and ask what happened, because it usually teaches us something.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s-7)">
+    <div>
+      <h2 style="margin-bottom:var(--s-4)">Visit us</h2>
+      <div class="specs" style="border-top:1px solid var(--hairline)">
+        <div class="specs__row"><dt>Address</dt><dd>Fernwick Nursery, Marsh Lane<br />Lea Valley, London E10</dd></div>
+        <div class="specs__row"><dt>Saturdays</dt><dd>9am – 4pm, no appointment</dd></div>
+        <div class="specs__row"><dt>Weekdays</dt><dd>Trade and wholesale by arrangement</dd></div>
+        <div class="specs__row"><dt>Email</dt><dd><a class="tlink" href="mailto:hello@fernwick.com">hello@fernwick.com</a></dd></div>
+        <div class="specs__row"><dt>Telephone</dt><dd>020 7946 0132</dd></div>
+      </div>
+    </div>
+
+    <div>
+      <h2 style="margin-bottom:var(--s-4)">Ask a grower</h2>
+      <form class="grid" style="gap:var(--s-4)" data-demo-form="Thanks — a grower will reply, usually the same day">
+        <div class="field">
+          <label for="c-name">Your name</label>
+          <input class="input" id="c-name" type="text" required placeholder="Rosa Whitfield" />
+        </div>
+        <div class="field">
+          <label for="c-email">Email</label>
+          <input class="input" id="c-email" type="email" required placeholder="you@example.com" />
+        </div>
+        <div class="field">
+          <label for="c-topic">What about</label>
+          <select class="select" id="c-topic">
+            <option>A plant that is struggling</option>
+            <option>An order I have placed</option>
+            <option>Wholesale and trade</option>
+            <option>Visiting the nursery</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="c-msg">Your message</label>
+          <textarea class="textarea" id="c-msg" required placeholder="Photographs help — you can attach them to the reply."></textarea>
+        </div>
+        <div>
+          <button class="btn btn--primary" type="submit">Send message</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:var(--s-3)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 21V9" /><path d="M12 13c0-3.3 2.7-6 6-6 0 3.3-2.7 6-6 6Z" /><path d="M12 16c0-2.8-2.2-5-5-5 0 2.8 2.2 5 5 5Z" />
+          </svg>
+          <span class="brand__word">Fernwick</span>
+        </a>
+        <p class="muted" style="font-size:var(--text-sm);max-width:34ch;margin-bottom:var(--s-4)">
+          A small nursery in the Lea Valley. We grow what we sell, and we tell you honestly
+          how hard it is to keep alive.
+        </p>
+        <form class="newsletter" data-demo-form="Thanks — check your inbox for a welcome note">
+          <label class="sr-only" for="nl">Email address</label>
+          <input class="input" id="nl" type="email" placeholder="Email address" required />
+          <button class="btn btn--primary" type="submit">Join</button>
+        </form>
+      </div>
+
+      <div>
+        <h3>Shop</h3>
+        <ul>
+          <li><a href="shop.html">All plants</a></li>
+          <li><a href="shop.html">Easy care</a></li>
+          <li><a href="shop.html">Pet safe</a></li>
+          <li><a href="shop.html">Low light</a></li>
+          <li><a href="shop.html">Sale</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Help</h3>
+        <ul>
+          <li><a href="care.html">Care guides</a></li>
+          <li><a href="care.html">Watering advice</a></li>
+          <li><a href="about.html">Delivery &amp; returns</a></li>
+          <li><a href="about.html">Plant guarantee</a></li>
+          <li><a href="about.html">Contact us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Nursery</h3>
+        <ul>
+          <li><a href="about.html">Our story</a></li>
+          <li><a href="about.html">Visit us</a></li>
+          <li><a href="about.html">Wholesale</a></li>
+          <li><a href="about.html">Sustainability</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot__bottom">
+      <p class="label">© 2026 Fernwick Nursery — Lea Valley, London</p>
+      <p class="label">A free template from <a href="https://html.design/" class="tlink">html.design</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== Cart drawer ===================== -->
+<div class="scrim" id="drawerScrim" data-open="false" aria-hidden="true"></div>
+<aside class="drawer" data-open="false" role="dialog" aria-modal="true" aria-label="Your basket">
+  <div class="drawer__head">
+    <h2 style="font-size:var(--text-md)">Your basket</h2>
+    <button class="btn btn--icon" type="button" data-action="close-drawer" aria-label="Close basket">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+
+  <div class="drawer__body">
+    <div data-cart-empty>
+      <div class="empty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <h3>Your basket is empty</h3>
+        <p>Nothing potted up yet. Have a look through the nursery.</p>
+        <a class="btn btn--primary btn--sm" href="shop.html">Shop plants</a>
+      </div>
+    </div>
+    <div data-cart-lines="drawer" style="display:grid;gap:var(--s-5)"></div>
+  </div>
+
+  <div class="drawer__foot" data-cart-filled hidden>
+    <div class="totalrow"><span>Subtotal</span><span class="num" data-cart-subtotal>£0</span></div>
+    <div class="totalrow"><span>Delivery</span><span class="num" data-cart-delivery>Free</span></div>
+    <div class="totalrow totalrow--grand"><span>Total</span><span class="num" data-cart-total>£0</span></div>
+    <a class="btn btn--primary btn--block" href="cart.html">View basket</a>
+    <button class="btn btn--ghost btn--block" type="button" data-checkout>Checkout</button>
+  </div>
+</aside>
+
+<div class="toasts" aria-live="polite"></div>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
